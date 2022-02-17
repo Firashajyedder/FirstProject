@@ -1,0 +1,20 @@
+<h1> liste students
+
+<a href="{{path('ajouters',)}}" > add</a>
+</h1>
+{{ form(searchForm) }}
+<br>
+
+
+<table border=5>
+{%for c in students %}
+<tr>
+
+<td> {{c.nsc}}  </td>
+<td> {{c.email}}  </td>
+<td> <a href="{{path('modifiers',{'id':c.nsc})}}" > edit</a>
+
+<a href="{{path('deletes',{'id':c.nsc})}}" > delete</a> </td>
+</tr>
+{% endfor %}
+</table>
